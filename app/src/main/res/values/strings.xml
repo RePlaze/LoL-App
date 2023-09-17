@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SmoothBottomBar</string>
+    <string name="app_name">LoL Info</string>
 
     <string name="menu_dashboard">Dashboard</string>
     <string name="menu_leaderboard">Leaderboard</string>
