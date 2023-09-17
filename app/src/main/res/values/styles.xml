@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -6,6 +6,24 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="BoldSFProDisplay">
+        <item name="android:fontFamily">@font/sfpro</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="rounded" parent="">
+                <item name = "cornerFamily">rounded</item>
+                <item name = "cornerSize">20dp</item>
+                <item name = "color">@color/black</item>
+    </style>
+    <style name="SearchViewTheme" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColor">#EF2E6E</item>
+        <item name="android:iconifiedByDefault">true</item>
+        <item name="android:queryHint">Search...</item>
+        <item name="android:queryBackground" tools:targetApi="lollipop">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/white</item>
     </style>
 
 </resources>
