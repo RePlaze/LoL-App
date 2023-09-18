@@ -10,7 +10,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="33dp"
-            app:cardBackgroundColor="@color/black"> <!-- Set the background color for the inner border -->
+            app:cardBackgroundColor="@color/black">
 
             <ImageView
                 android:id="@+id/itemImage"

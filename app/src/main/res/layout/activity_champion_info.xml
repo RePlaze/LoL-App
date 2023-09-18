@@ -1,29 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <!-- res/layout/activity_champion_info.xml -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <!-- AppBarLayout with CollapsingToolbarLayout -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <!-- Champion Background Image -->
+            <ImageView
+                android:id="@+id/championBackgroundImageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_Image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="40dp"
+                app:cardBackgroundColor="@color/black"
+                app:layout_collapseMode="parallax">
+
+                <!-- Champion Image -->
+                <ImageView
+                    android:id="@+id/championImageView"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:scaleType="centerCrop" />
+            </androidx.cardview.widget.CardView>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- NestedScrollView for scrolling content -->
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <ImageView
-            android:id="@+id/championImageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_centerHorizontal="true"
-        android:scaleType="centerCrop"
-        android:contentDescription="@null" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/championNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/championImageView"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:text=""
-            android:textSize="18sp"
-            android:textColor="@android:color/black" />
+            <!-- Champion Name TextView -->
+            <TextView
+                android:id="@+id/championNameTextView"
+                style="@style/BoldSFProDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@id/card_Image"
+                android:layout_toRightOf="@id/card_Image"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
 
-    </RelativeLayout>
+            <!-- ... (Other content) ... -->
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
