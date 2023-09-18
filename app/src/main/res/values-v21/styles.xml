@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <style name="SearchViewTheme" parent="Widget.AppCompat.SearchView">
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:iconifiedByDefault">true</item>

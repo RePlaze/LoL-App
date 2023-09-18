@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -22,6 +24,10 @@ class FirstFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_first, container, false)
         recyclerView = view.findViewById(R.id.recyclerView)
         searchView = view.findViewById(R.id.searchView)
+
+        // Change the text color of the SearchView query text
+        val searchText =
+            searchView.findViewById<EditText>(androidx.appcompat.R.id.search_src_text)
 
 
         val gridItems = mutableListOf(
@@ -196,6 +202,7 @@ class FirstFragment : Fragment() {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
+
 
             override fun onQueryTextChange(newText: String?): Boolean {
                 adapter.filter.filter(newText)
