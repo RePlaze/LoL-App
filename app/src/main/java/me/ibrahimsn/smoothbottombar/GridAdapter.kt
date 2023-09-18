@@ -1,5 +1,7 @@
 package me.ibrahimsn.smoothbottombar
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.widget.Filter
 import android.widget.Filterable
 
-class GridAdapter(private val originalGridItems: List<GridItem>) :
+class GridAdapter(private val originalGridItems: List<GridItem>, private val context: Context) :
     RecyclerView.Adapter<GridAdapter.ViewHolder>(), Filterable {
 
     private var filteredGridItems: List<GridItem> = originalGridItems
@@ -62,6 +64,19 @@ class GridAdapter(private val originalGridItems: List<GridItem>) :
         fun bind(item: GridItem) {
             nameTextView.text = item.name
             imageView.setImageResource(item.imageResId)
+        }
+
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val item = filteredGridItems[position]
+                    // Open ChampionInfo activity and pass the champion's name
+                    val intent = Intent(context, ChampionInfo::class.java)
+                    intent.putExtra("championName", item.name)
+                    context.startActivity(intent)
+                }
+            }
         }
     }
 }

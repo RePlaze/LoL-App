@@ -1,5 +1,6 @@
 package me.ibrahimsn.smoothbottombar
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -186,9 +187,9 @@ class FirstFragment : Fragment() {
             GridItem("Zyra", R.drawable.zyra)
         )
 
-        adapter = GridAdapter(gridItems)
+        adapter = GridAdapter(gridItems, requireContext())
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = GridLayoutManager(context, 3)
+        recyclerView.layoutManager = GridLayoutManager(context, 4)
 
         // Set up search functionality
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
