@@ -7,18 +7,20 @@
 
         <!-- Outer CardView (your existing card) -->
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="33dp"
-            app:cardBackgroundColor="@color/black">
+            android:layout_width="81dp"
+            android:layout_height="81dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="1dp"
+            >
 
             <ImageView
                 android:id="@+id/itemImage"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width= "90dp"
+                android:layout_height="90dp"
                 android:adjustViewBounds="true"
-                android:contentDescription="Item Image"
-                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
                 app:shapeAppearanceOverlay="@style/rounded"/>
         </androidx.cardview.widget.CardView>
 
@@ -29,6 +31,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Item Name"
-        android:textColor="@color/colorAccent" />
+        android:textColor="#dadadc" />
 
 </LinearLayout>

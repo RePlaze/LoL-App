@@ -29,23 +29,25 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_Image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                app:cardCornerRadius="40dp"
+                app:cardCornerRadius="35dp"
                 app:cardBackgroundColor="@color/black"
                 app:layout_collapseMode="parallax">
 
                 <!-- Champion Image -->
                 <ImageView
                     android:id="@+id/championImageView"
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
                     android:adjustViewBounds="true"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
                     android:contentDescription="@null"
-                    android:scaleType="centerCrop" />
+                     />
             </androidx.cardview.widget.CardView>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
