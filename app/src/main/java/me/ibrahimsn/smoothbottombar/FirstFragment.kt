@@ -203,7 +203,6 @@ class FirstFragment : Fragment() {
                 return false
             }
 
-
             override fun onQueryTextChange(newText: String?): Boolean {
                 adapter.filter.filter(newText)
                 return false
