@@ -90,7 +90,7 @@
 
             <include
                 android:id="@+id/card1"
-                layout="@layout/card"
+                layout="@layout/cardbig"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/championBuildTextView"
@@ -98,7 +98,7 @@
                 android:layout_alignLeft="@+id/championBuildTextView"
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="14dp" />
 
             <include
                 android:id="@+id/card2"
@@ -110,7 +110,7 @@
                 android:layout_alignLeft="@+id/card1"
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="12dp" />
 
             <include
                 android:id="@+id/card3"
@@ -122,7 +122,81 @@
                 android:layout_alignLeft="@+id/card2"
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/championFirstBuyTextView"
+                style="@style/BoldSFProDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card3"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:text="First Buy"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                tools:ignore="NotSibling" />
+
+            <include
+                android:id="@+id/firstbuy"
+                layout="@layout/firstbuy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/championFirstBuyTextView"
+                android:layout_alignStart="@+id/card2"
+                android:layout_alignLeft="@+id/card2"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/WeakAgainst"
+                style="@style/BoldSFProDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/firstbuy"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:text="Weak Against"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                tools:ignore="NotSibling" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/conters1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_below="@+id/WeakAgainst"
+                android:layout_marginTop="15dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:spanCount="5" />
+            <TextView
+                android:id="@+id/StrongAgainst"
+                style="@style/BoldSFProDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/conters1"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:text="Strong Against"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                tools:ignore="NotSibling" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/conters2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_below="@+id/StrongAgainst"
+                android:layout_marginTop="15dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:spanCount="5" />
 
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>

@@ -1,5 +1,6 @@
 package me.ibrahimsn.smoothbottombar
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.Filter
 import android.widget.Filterable
+import java.util.*
 
 class GridAdapter(private val originalGridItems: List<GridItem>, private val context: Context) :
     RecyclerView.Adapter<GridAdapter.ViewHolder>(), Filterable {
@@ -39,9 +41,9 @@ class GridAdapter(private val originalGridItems: List<GridItem>, private val con
                     filterResults.values = originalGridItems
                 } else {
                     val filteredList = mutableListOf<GridItem>()
-                    val filterPattern = constraint.toString().trim().toLowerCase()
+                    val filterPattern = constraint.toString().trim().toLowerCase(Locale.ROOT)
                     for (item in originalGridItems) {
-                        if (item.name.toLowerCase().contains(filterPattern)) {
+                        if (item.name.toLowerCase(Locale.ROOT).contains(filterPattern)) {
                             filteredList.add(item)
                         }
                     }
@@ -50,6 +52,7 @@ class GridAdapter(private val originalGridItems: List<GridItem>, private val con
                 return filterResults
             }
 
+            @SuppressLint("NotifyDataSetChanged")
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
                 filteredGridItems = results?.values as? List<GridItem> ?: emptyList()
                 notifyDataSetChanged()
