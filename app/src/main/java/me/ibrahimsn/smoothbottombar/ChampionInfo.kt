@@ -2,29 +2,43 @@ package me.ibrahimsn.smoothbottombar
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.webkit.WebChromeClient
+import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
-import com.squareup.picasso.Picasso
+import me.ibrahimsn.smoothbottombar.databinding.ActivityChampionInfoBinding
 import java.util.*
 
 class ChampionInfo : AppCompatActivity() {
-
-    @SuppressLint("DiscouragedApi")
+    private lateinit var binding: ActivityChampionInfoBinding
+    @SuppressLint("SetJavaScriptEnabled", "DiscouragedApi", "CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
-        supportActionBar?.hide()
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_champion_info)
+        binding = ActivityChampionInfoBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        // Load and display the YouTube video thumbnail image
-        val youtubeVideoThumbnailImageView = findViewById<ImageView>(R.id.youtubeVideoThumbnail)
-        val youtubeThumbnailUrl = "https://www.youtube.com/watch?v=13dUcN9AeTA&ab_channel=3MinuteLeagueofLegends"
+        supportActionBar?.hide()
 
-        Picasso.get().load(youtubeThumbnailUrl).into(youtubeVideoThumbnailImageView)
+        // Load and display the YouTube video
+        val video = "https://www.youtube.com/watch?v=_FBW15BTJ1c"
+
+
+        // Enable JavaScript in WebView
+        val webSettings = binding.youtubeVideo.settings
+        webSettings.javaScriptEnabled = true
+
+        binding.youtubeVideo.setBackgroundColor(0)
+
+        binding.youtubeVideo.setWebViewClient(WebViewClient())
+        binding.youtubeVideo.getSettings().setAllowFileAccess(true)
+        binding.youtubeVideo.getSettings().setDomStorageEnabled(true)
+        binding.youtubeVideo.getSettings().setJavaScriptEnabled(true)
+        binding.youtubeVideo.loadUrl(video)
 
         val championName = intent.getStringExtra("championName")
-
         val championImageView: ImageView = findViewById(R.id.championImageView)
         val championNameTextView: TextView = findViewById(R.id.championNameTextView)
 
@@ -95,6 +109,12 @@ class ChampionInfo : AppCompatActivity() {
         setCounter8.setImageResource(R.drawable.kaisa)
         setCounter9.setImageResource(R.drawable.kaisa)
         setCounter10.setImageResource(R.drawable.kaisa)
+
+        val lane = findViewById<ImageView>(R.id.lane)
+        val setLane = lane.findViewById<ImageView>(R.id.lane)
+        setLane.setImageResource(R.drawable.midlane)
+
+
         //set firstbuy for each champion
         if (championName == "Aatrox") {
             Buyimage1.setImageResource(R.drawable.m1054)

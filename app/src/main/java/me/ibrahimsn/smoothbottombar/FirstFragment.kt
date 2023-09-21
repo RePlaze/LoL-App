@@ -28,7 +28,7 @@ class FirstFragment : Fragment() {
         // Change the text color of the SearchView query text
         val searchText =
             searchView.findViewById<EditText>(androidx.appcompat.R.id.search_src_text)
-
+        searchText.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
 
         val gridItems = mutableListOf(
             GridItem("Aatrox", R.drawable.aatrox),

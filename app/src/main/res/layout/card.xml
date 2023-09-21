@@ -7,7 +7,7 @@
     android:layout_below="@+id/championBuildTextView"
     android:layout_margin="16dp"
     android:layout_marginTop="10dp"
-    app:cardCornerRadius="14dp"
+    app:cardCornerRadius="9dp"
     android:background="@color/black">
 
     <LinearLayout
@@ -18,13 +18,13 @@
 
         <!-- Image 1 -->
         <androidx.cardview.widget.CardView
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            app:cardCornerRadius="15dp">
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:cardCornerRadius="10dp">
         <ImageView
             android:id="@+id/image1"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
             android:contentDescription="Image1"
@@ -38,13 +38,13 @@
             app:tint="@color/colorPrimaryDark" />
         <!-- Image 2 -->
         <androidx.cardview.widget.CardView
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            app:cardCornerRadius="15dp">
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:cardCornerRadius="10dp">
         <ImageView
             android:id="@+id/image2"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
             android:contentDescription="Image2"
@@ -58,13 +58,13 @@
             app:tint="@color/colorPrimaryDark" />
         <!-- Image 3 -->
         <androidx.cardview.widget.CardView
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            app:cardCornerRadius="15dp">
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:cardCornerRadius="10dp">
         <ImageView
             android:id="@+id/image3"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
             android:contentDescription="Image3"

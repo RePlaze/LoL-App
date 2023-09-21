@@ -7,7 +7,7 @@
     android:layout_below="@+id/championBuildTextView"
     android:layout_margin="16dp"
     android:layout_marginTop="10dp"
-    app:cardCornerRadius="15dp"
+    app:cardCornerRadius="12dp"
     android:background="@color/black">
 
     <LinearLayout
@@ -18,53 +18,53 @@
 
         <!-- Image 1 -->
         <androidx.cardview.widget.CardView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            app:cardCornerRadius="15dp">
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="12dp">
             <ImageView
                 android:id="@+id/image1"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:contentDescription="Image1"
                 android:scaleType="centerInside"/>
         </androidx.cardview.widget.CardView>
         <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:src="@drawable/ic_arrowbig"
             android:layout_gravity="center_vertical"
             app:tint="@color/colorPrimaryDark" />
         <!-- Image 2 -->
         <androidx.cardview.widget.CardView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            app:cardCornerRadius="15dp">
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="12dp">
             <ImageView
                 android:id="@+id/image2"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:contentDescription="Image2"
                 android:scaleType="centerInside"/>
         </androidx.cardview.widget.CardView>
         <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:src="@drawable/ic_arrowbig"
             android:layout_gravity="center_vertical"
             app:tint="@color/colorPrimaryDark" />
         <!-- Image 3 -->
         <androidx.cardview.widget.CardView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            app:cardCornerRadius="15dp">
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="12dp">
             <ImageView
                 android:id="@+id/image3"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:contentDescription="Image3"

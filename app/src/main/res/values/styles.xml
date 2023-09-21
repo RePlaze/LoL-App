@@ -25,8 +25,8 @@
     <style name="SearchViewTheme" parent="Widget.AppCompat.SearchView">
         <item name="android:iconifiedByDefault">true</item>
         <item name="android:queryHint">Search...</item>
-        <item name="android:queryBackground" tools:targetApi="lollipop">@color/black</item>
-        <item name="colorControlNormal">@color/black</item>
+        <item name="android:queryBackground">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
     </style>
 
 
