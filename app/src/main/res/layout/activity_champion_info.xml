@@ -609,11 +609,25 @@
             <WebView
                 android:id="@+id/youtubeVideo"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="350dp"
                 android:layout_below="@id/StrongAgainst"
                 android:layout_marginTop="100dp"
                 android:background="@color/black"
                 tools:ignore="WebViewLayout" />
+            <TextView
+                android:id="@+id/Guide"
+                style="@style/BoldSFProDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/youtubeVideo"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="30dp"
+                android:text="@string/guide"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                tools:ignore="NotSibling" />
 
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>

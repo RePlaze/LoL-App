@@ -2,8 +2,6 @@ package me.ibrahimsn.smoothbottombar
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.webkit.WebChromeClient
-import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +11,7 @@ import java.util.*
 
 class ChampionInfo : AppCompatActivity() {
     private lateinit var binding: ActivityChampionInfoBinding
+
     @SuppressLint("SetJavaScriptEnabled", "DiscouragedApi", "CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,21 +21,17 @@ class ChampionInfo : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        // Load and display the YouTube video
-        val video = "https://www.youtube.com/watch?v=_FBW15BTJ1c"
+// Construct the HTML iframe code to embed the YouTube video
+        val videoId = "_FBW15BTJ1c"
+        val html =
+            "<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/$videoId\" frameborder=\"0\" allowfullscreen></iframe>"
 
-
-        // Enable JavaScript in WebView
-        val webSettings = binding.youtubeVideo.settings
-        webSettings.javaScriptEnabled = true
-
+        // Load the HTML content into the WebView
         binding.youtubeVideo.setBackgroundColor(0)
+        binding.youtubeVideo.settings.javaScriptEnabled = true
+        binding.youtubeVideo.settings.domStorageEnabled = true
+        binding.youtubeVideo.loadData(html, "text/html", "utf-8")
 
-        binding.youtubeVideo.setWebViewClient(WebViewClient())
-        binding.youtubeVideo.getSettings().setAllowFileAccess(true)
-        binding.youtubeVideo.getSettings().setDomStorageEnabled(true)
-        binding.youtubeVideo.getSettings().setJavaScriptEnabled(true)
-        binding.youtubeVideo.loadUrl(video)
 
         val championName = intent.getStringExtra("championName")
         val championImageView: ImageView = findViewById(R.id.championImageView)
@@ -286,5 +281,5 @@ class ChampionInfo : AppCompatActivity() {
         }
 
 
-        }
     }
+}
